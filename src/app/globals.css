@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.gradient {
+    position: relative;
+    background-image: repeating-linear-gradient(
+      to right,
+      #63DFFA,
+      #6C47FF,
+      #63DFFA
+    );
+    z-index: 1;
+    background-position-x: 0%;
+    background-size: 200%;
+    animation: gradimate 3s linear infinite;
+    background-clip: text;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  
+  @keyframes gradimate {
+    0% {
+      background-position-x: 0%;
+    }
+    50% {
+      background-position-x: 100%;
+    }
+    100% {
+      background-position-x: 200%;
+    }
+  }
