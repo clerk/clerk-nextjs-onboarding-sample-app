@@ -1,8 +1,4 @@
-import {
-  ClerkProvider,
-  SignedIn,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, UserButton } from "@clerk/nextjs";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Image from "next/image";
@@ -25,9 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider >
+      <ClerkProvider>
         <body className={`${inter.className} min-h-screen flex flex-col`}>
-
           <header className="flex items-center h-20 gap-4 px-4 border-b border-black border-solid sm:px-8 border-opacity-20">
             <Link href="/" className="flex items-center h-20 gap-2 sm:gap-4">
               <Image
@@ -45,11 +40,8 @@ export default function RootLayout({
             </SignedIn>
           </header>
 
-
-
           <main className="grow">{children}</main>
 
-          
           <footer className="flex items-center h-20 gap-1 px-8 font-medium border-t md:px-20">
             <nav className="flex justify-end grow sm:gap-2">
               <a
@@ -85,11 +77,9 @@ export default function RootLayout({
           </footer>
         </body>
       </ClerkProvider>
-
     </html>
   );
 }
-
 
 export function Docs() {
   return (
@@ -103,9 +93,9 @@ export function Docs() {
       <path
         d="M9.99999 16.5L9.91661 16.3749C9.33774 15.5066 9.04831 15.0725 8.66591 14.7582C8.32737 14.4799 7.93729 14.2712 7.51799 14.1438C7.04437 14 6.52258 14 5.47901 14H4.33332C3.3999 14 2.93319 14 2.57667 13.8183C2.26307 13.6586 2.0081 13.4036 1.84831 13.09C1.66666 12.7335 1.66666 12.2668 1.66666 11.3333V4.16667C1.66666 3.23325 1.66666 2.76654 1.84831 2.41002C2.0081 2.09641 2.26307 1.84144 2.57667 1.68166C2.93319 1.5 3.3999 1.5 4.33332 1.5H4.66666C6.5335 1.5 7.46692 1.5 8.17996 1.86331C8.80717 2.18289 9.3171 2.69282 9.63668 3.32003C9.99999 4.03307 9.99999 4.96649 9.99999 6.83333M9.99999 16.5V6.83333M9.99999 16.5L10.0834 16.3749C10.6622 15.5066 10.9517 15.0725 11.3341 14.7582C11.6726 14.4799 12.0627 14.2712 12.482 14.1438C12.9556 14 13.4774 14 14.521 14H15.6667C16.6001 14 17.0668 14 17.4233 13.8183C17.7369 13.6586 17.9919 13.4036 18.1517 13.09C18.3333 12.7335 18.3333 12.2668 18.3333 11.3333V4.16667C18.3333 3.23325 18.3333 2.76654 18.1517 2.41002C17.9919 2.09641 17.7369 1.84144 17.4233 1.68166C17.0668 1.5 16.6001 1.5 15.6667 1.5H15.3333C13.4665 1.5 12.5331 1.5 11.82 1.86331C11.1928 2.18289 10.6829 2.69282 10.3633 3.32003C9.99999 4.03307 9.99999 4.96649 9.99999 6.83333"
         stroke="#344054"
-        stroke-width="1.66667"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -171,8 +161,8 @@ export function Discord() {
           y2="18.75"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#687EC9" />
-          <stop offset="1" stop-color="#5971C3" />
+          <stop stopColor="#687EC9" />
+          <stop offset="1" stopColor="#5971C3" />
         </linearGradient>
       </defs>
     </svg>

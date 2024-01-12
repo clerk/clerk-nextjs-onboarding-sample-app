@@ -33,10 +33,9 @@ The user onboarding flow plays a crucial role in your application development jo
 
 This repo is a working implementation of a full stack Next.js app showcasing how to leverage Clerk for your user onboarding flow and includes the following:
 
-- Fully functional auth flow leveraging the Account Portal 
+- Fully functional auth flow leveraging the Account Portal
 - Hooks for accessing user data and authentication state
 - Customized clerkMiddleware to leverage state for redirect
-
 
 ## Demo
 
@@ -45,7 +44,7 @@ A hosted demo of this example is available at https://clerk-nextjs-demo-app-rout
 ## Running the template
 
 ```bash
-git clone https://github.com/clerk/clerk-nextjs-onboarding-sample-app 
+git clone https://github.com/clerk/clerk-nextjs-onboarding-sample-app
 ```
 
 To run the example locally, you need to:
