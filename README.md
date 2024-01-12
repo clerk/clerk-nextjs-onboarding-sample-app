@@ -86,7 +86,3 @@ Feel free to create an [issue]() with the **feedback** label. Our team will take
 You can discuss ideas, ask questions, and meet others from the community in our [Discord](https://discord.com/invite/b5rXHjAg7A).
 
 If you prefer, you can also find support through our [Twitter](https://twitter.com/ClerkDev), or you can [email](mailto:support@clerk.com) us!
-
-git remote add origin https://github.com/clerk/clerk-nextjs-onboarding-sample-app.git
-git branch -M main
-git push -u origin main
