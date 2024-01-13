@@ -17,7 +17,6 @@ export const completeOnboarding = async (formData: FormData) => {
     },
   });
   if (data) {
-    // const res = data.publicMetadata
     return { message: data.publicMetadata };
   }
   if (errors) {
