@@ -9,17 +9,18 @@ export const completeOnboarding = async (formData: FormData) => {
     return { message: "No Logged In User" };
   }
 
-  try {
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: {
-        onboardingComplete: true,
-        applicationName: formData.get("applicationName"),
-        applicationType: formData.get("applicationType"),
-      },
-    });
-    return { message: "User metadata Updated" };
-  } catch (e) {
-    console.log("error", e);
-    return { message: "Error Updating User Metadata" };
+  const { data, errors } = await clerkClient.users.updateUser(userId, {
+    publicMetadata: {
+      onboardingComplete: true,
+      applicationName: formData.get("applicationName"),
+      applicationType: formData.get("applicationType"),
+    },
+  });
+  if (data) {
+    // const res = data.publicMetadata
+    return { message: data.publicMetadata };
+  }
+  if (errors) {
+    return { error: errors[0].longMessage };
   }
 };

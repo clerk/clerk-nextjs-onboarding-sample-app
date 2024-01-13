@@ -4,30 +4,29 @@ import { NextResponse } from "next/server";
 const isProtectedRoute = createRouteMatcher(["/dashboard", "/onboarding"]);
 
 export default clerkMiddleware((auth, req) => {
-  const userAuth = auth();
-  const isOnboarding = req.nextUrl.pathname === "/onboarding";
-
-  // If user is logged in
-  if (userAuth.userId) {
-    // If visiting /onboarding and onboarding is not complete, redirect
-    if (
-      !isOnboarding &&
-      userAuth.sessionClaims?.metadata?.onboardingComplete !== true
-    ) {
-      const onboardingUrl = new URL("/onboarding", req.url);
-      return NextResponse.redirect(onboardingUrl);
-    }
-
-    // If onboarding is complete or visiting another page, proceed
+  // If user is logged in and visiting /onboarding, don't redirect
+  // This prevents a redirect loop
+  if (auth().userId && req.nextUrl.pathname === "/onboarding") {
     return NextResponse.next();
   }
 
-  // If user is not logged in and visiting a protected route, redirect to sign in
-  if (isProtectedRoute(req)) {
-    return userAuth.redirectToSignIn();
+  // Check if a logged in user has completed onboarding
+  // If not, redirect the user to the onboarding route
+  if (
+    auth().userId &&
+    auth().sessionClaims?.metadata.onboardingComplete !== true
+  ) {
+    const onboardingUrl = new URL("/onboarding", req.url);
+    return NextResponse.redirect(onboardingUrl);
   }
 
-  // User isn't logged in and the route is public - let them visit it
+  // Check if the user visiting a protected route is logged in
+  // If not, redirect the user to the sign-in route
+  if (!auth().userId && isProtectedRoute(req)) {
+    return auth().redirectToSignIn();
+  }
+
+  // User isn't logged in and the route is public -- let them visit it
   return NextResponse.next();
 });
 
