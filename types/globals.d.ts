@@ -5,7 +5,7 @@ declare global {
     metadata: {
       onboardingComplete?: boolean;
       applicationName?: string;
-      applicattionType?: string;
+      applicationType?: string;
     };
 
   }
