@@ -51,6 +51,13 @@ export default function RootLayout({
 
 
           <footer className="flex items-center h-20 gap-1 px-8 font-medium border-t md:px-20">
+            <a 
+              className="flex gap-2 px-3 py-2 text-m font-semibold text-gray-600 transition duration-100 rounded-md hover:text-gray-800" 
+              href="https://github.com/clerk/clerk-nextjs-onboarding-sample-app"
+            >
+            <span className="hidden sm:inline">View the Github Repo for this Sample App</span>
+            </a>
+      
             <nav className="flex justify-end grow sm:gap-2">
               <a
                 className="flex gap-2 px-3 py-2 text-sm font-semibold text-gray-600 transition duration-100 rounded-md hover:text-gray-800"
@@ -91,7 +98,7 @@ export default function RootLayout({
 }
 
 
-export function Docs() {
+function Docs() {
   return (
     <svg
       width="20"
@@ -111,7 +118,7 @@ export function Docs() {
   );
 }
 
-export function Github() {
+function Github() {
   return (
     <svg
       width="18"
@@ -128,7 +135,7 @@ export function Github() {
   );
 }
 
-export function Twitter() {
+function Twitter() {
   return (
     <svg
       width="19"
@@ -145,7 +152,7 @@ export function Twitter() {
   );
 }
 
-export function Discord() {
+function Discord() {
   return (
     <svg
       width="20"
@@ -178,3 +185,5 @@ export function Discord() {
     </svg>
   );
 }
+
+
