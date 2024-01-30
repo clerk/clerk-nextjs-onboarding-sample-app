@@ -91,7 +91,7 @@ export default function RootLayout({
 }
 
 
-export function Docs() {
+function Docs() {
   return (
     <svg
       width="20"
@@ -111,7 +111,7 @@ export function Docs() {
   );
 }
 
-export function Github() {
+function Github() {
   return (
     <svg
       width="18"
@@ -128,7 +128,7 @@ export function Github() {
   );
 }
 
-export function Twitter() {
+function Twitter() {
   return (
     <svg
       width="19"
@@ -145,7 +145,7 @@ export function Twitter() {
   );
 }
 
-export function Discord() {
+function Discord() {
   return (
     <svg
       width="20"
@@ -178,3 +178,5 @@ export function Discord() {
     </svg>
   );
 }
+
+
