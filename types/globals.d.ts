@@ -7,7 +7,6 @@ declare global {
       applicationName?: string;
       applicationType?: string;
     };
-
+    firstName?: string;
   }
-
 }
