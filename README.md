@@ -40,7 +40,7 @@ This repo is a working implementation of a full stack Next.js app showcasing how
 
 ## Demo
 
-A hosted demo of this example is available at https://clerk-nextjs-demo-app-router.clerkpreview.com/ [TODO! UPDATE THIS!]
+A hosted demo of this example is available at [https://clerk-nextjs-demo-app-router.clerkpreview.com/](https://sample-onboarding-app.clerkpreview.com/) 
 
 ## Running the template
 
@@ -50,10 +50,7 @@ git clone https://github.com/clerk/clerk-nextjs-onboarding-sample-app
 
 To run the example locally, you need to:
 
-<!-- TODO: UPDATE THIS UTM -->
-
 1. Sign up for a Clerk account at [https://clerk.com](https://dashboard.clerk.com/sign-up?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app).
-<!-- TODO: UPDATE THIS UTM -->
 2. Go to the [Clerk dashboard](https://dashboard.clerk.com?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app) and create an application.
 3. Set the required Clerk environment variables as shown in [the example `env` file](./.env.template).
 4. `npm install` the required dependencies.
@@ -62,24 +59,18 @@ To run the example locally, you need to:
 ## Learn more
 
 To learn more about Clerk and Next.js, check out the following resources:
-
-<!-- TODO: UPDATE THIS UTM -->
-
+ 
 - [Quickstart: Get started with Next.js and Clerk](https://clerk.com/docs/quickstarts/nextjs?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app)
-<!-- TODO: UPDATE THIS UTM -->
 - [Clerk Documentation](https://clerk.com/docs?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app)
 - [Next.js Documentation](https://nextjs.org/docs)
 
 ## Found an issue?
 
-If you have found an issue with our documentation, please create an [issue](https://github.com/clerkinc/clerk-nextjs-demo-app-router/issues).
+If you have found an issue with our documentation, please create an [issue](https://github.com/clerk/clerk-nextjs-onboarding-sample-app/issues).
 
 If it's a quick fix, such as a misspelled word or a broken link, feel free to skip creating an issue.  
-Go ahead and create a [pull request](https://github.com/clerkinc/clerk-nextjs-demo-app-router/pulls) with the solution. :rocket:
+Go ahead and create a [pull request](https://github.com/clerk/clerk-nextjs-onboarding-sample-app/pulls) with the solution. :rocket:
 
-## Want to leave feedback?
-
-Feel free to create an [issue]() with the **feedback** label. Our team will take a look at it and get back to you as soon as we can!
 
 ## Connect with us
 
