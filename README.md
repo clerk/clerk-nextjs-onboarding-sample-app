@@ -40,7 +40,7 @@ This repo is a working implementation of a full stack Next.js app showcasing how
 
 ## Demo
 
-A hosted demo of this example is available at [https://clerk-nextjs-demo-app-router.clerkpreview.com/](https://sample-onboarding-app.clerkpreview.com/) 
+A hosted demo of this example is available at [https://sample-onboarding-app.clerkpreview.com/](https://sample-onboarding-app.clerkpreview.com/) 
 
 ## Running the template
 
