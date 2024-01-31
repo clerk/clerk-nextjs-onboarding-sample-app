@@ -5,7 +5,7 @@ export default function Home() {
 <main className="">
   <article className="grid">
     <div className="px-8 py-20 md:px-20 lg:py-48 text-center">
-      <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient leading-loose">
+      <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient md:leading-[1.5em]">
         User Onboarding starts here.
       </h1>
       <p className="mt-2 text-lg">
