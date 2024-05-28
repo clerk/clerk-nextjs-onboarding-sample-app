@@ -1,6 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
 import { redirectToSignIn } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
+import { clerkClient } from "@clerk/nextjs/server";
 
 // This example protects all routes including api/trpc routes
 // Please edit this to allow other routes to be public as needed.
@@ -8,7 +9,8 @@ import { NextRequest, NextResponse } from "next/server";
 export default authMiddleware({
   publicRoutes: ["/"],
   afterAuth: async (auth, req: NextRequest) => {
-    const { userId, sessionClaims } = auth
+    const { userId } = auth
+    const user = await clerkClient.users.getUser(userId);
 
     // For user visiting /onboarding, don't try and redirect
     if (userId && req.nextUrl.pathname === "/onboarding") {
@@ -20,7 +22,7 @@ export default authMiddleware({
 
     // Catch users who doesn't have `onboardingComplete: true` in PublicMetata
     // Redirect them to the /onboading out to complete onboarding
-    if (userId && !sessionClaims?.metadata?.onboardingComplete) {
+    if (userId && !user.publicMetadata.onboardingComplete) {
       const onboardingUrl = new URL("/onboarding", req.url);
       return NextResponse.redirect(onboardingUrl)
     }

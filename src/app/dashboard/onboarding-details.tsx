@@ -1,7 +1,8 @@
-import { auth } from "@clerk/nextjs";
+import { auth, clerkClient } from "@clerk/nextjs/server";
 
 export function OnboardingDetails() {
-  const { sessionClaims } = auth()
+  const { userId } = auth()
+  const user = clerkClient.users.getUser(userId);
 
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg" style={{ boxShadow: `0px 20px 24px -4px rgba(16, 24, 40, 0.08)` }}>
@@ -13,19 +14,19 @@ export function OnboardingDetails() {
           <div className="px-8 py-2">
             <dt className="text-sm font-semibold">Onboarding Completed?</dt>
             <dd className="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2 flex gap-2">
-              {sessionClaims?.metadata.onboardingComplete ? "Yes" : "No"}
+              {user?.publicMetadata?.onboardingComplete ? "Yes" : "No"}
             </dd>
           </div>
           <div className="px-8 py-2">
             <dt className="text-sm font-semibold">Application Name</dt>
             <dd className="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2 flex gap-2">
-              {sessionClaims?.metadata.applicationName}
+              {user?.publicMetadata?.applicationName}
             </dd>
           </div>
           <div className="px-8 py-2">
             <dt className="text-sm font-semibold">Application Type</dt>
             <dd className="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2 flex gap-2">
-              {sessionClaims?.metadata.applicationType}
+              {user?.publicMetadata?.applicationType}
             </dd>
           </div>
         </dl>
