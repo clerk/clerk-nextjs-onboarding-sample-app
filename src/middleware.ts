@@ -10,7 +10,7 @@ export default authMiddleware({
   publicRoutes: ["/"],
   afterAuth: async (auth, req: NextRequest) => {
     const { userId } = auth
-    const user = await clerkClient.users.getUser(userId);
+    const user = userId && await clerkClient.users.getUser(userId);
 
     // For user visiting /onboarding, don't try and redirect
     if (userId && req.nextUrl.pathname === "/onboarding") {
