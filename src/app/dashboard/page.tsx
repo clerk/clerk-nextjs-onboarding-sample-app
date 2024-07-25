@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { SessionDetails, UserDetails } from "./details";
 import { OnboardingDetails } from "./onboarding-details";
 

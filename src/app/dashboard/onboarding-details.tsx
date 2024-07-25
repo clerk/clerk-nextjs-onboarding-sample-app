@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 export function OnboardingDetails() {
   const { sessionClaims } = auth()
