@@ -53,8 +53,10 @@ To run the example locally, you need to:
 1. Sign up for a Clerk account at [https://clerk.com](https://dashboard.clerk.com/sign-up?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app).
 2. Go to the [Clerk dashboard](https://dashboard.clerk.com?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app) and create an application.
 3. Set the required Clerk environment variables
-4. `npm install` or `pnpm install` the required dependencies.
-5. `npm run dev` or `pnpm dev` to launch the development server.
+4. `pnpm install` the required dependencies.
+5. `pnpm dev` to launch the development server.
+
+> _Alternatively, to use npm instead of pnpm, first delete the `pnpm-lock.yaml` file and run `npm install` and `npm run dev`_
 
 ## Learn more
 
