@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 
 const isPublicRoute = createRouteMatcher(["/", "/onboarding"])
 
-export default clerkMiddleware((auth, req) => {
-  const { userId, sessionClaims, redirectToSignIn } = auth();
+export default clerkMiddleware(async (auth, req) => {
+  const { userId, sessionClaims, redirectToSignIn } = await auth();
 
   // If the user isn't signed in and the route is private, redirect to sign-in
   if (!userId && !isPublicRoute(req)) {
