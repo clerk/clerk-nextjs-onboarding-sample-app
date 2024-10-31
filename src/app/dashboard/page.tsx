@@ -2,8 +2,8 @@ import { auth } from "@clerk/nextjs/server";
 import { SessionDetails, UserDetails } from "./details";
 import { OnboardingDetails } from "./onboarding-details";
 
-export default function Dashboard() {
-  const { userId, sessionClaims } = auth()
+export default async function Dashboard() {
+  const { userId, sessionClaims } = await auth()
 
   return (
     <div className="px-8 py-12 sm:py-16 md:px-20">

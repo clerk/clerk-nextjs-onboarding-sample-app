@@ -1,7 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 
-export function OnboardingDetails() {
-  const { sessionClaims } = auth()
+export async function OnboardingDetails() {
+  const { sessionClaims } = await auth()
 
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg" style={{ boxShadow: `0px 20px 24px -4px rgba(16, 24, 40, 0.08)` }}>
