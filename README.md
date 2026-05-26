@@ -18,7 +18,7 @@
     <img alt="Discord" src="https://img.shields.io/discord/856971667393609759?color=7389D8&label&logo=discord&logoColor=ffffff" />
   </a>
   <a href="https://x.com/clerk">
-    <img alt="Twitter" src="https://img.shields.io/twitter/url.svg?label=%40clerk&style=social&url=https%3A%2F%2Fx.com%2Fclerk" />
+    <img alt="Follow on X" src="https://img.shields.io/twitter/url.svg?label=%40clerk&style=social&url=https%3A%2F%2Fx.com%2Fclerk" />
   </a>
   <br />
   <br />
@@ -76,6 +76,6 @@ Go ahead and create a [pull request](https://github.com/clerk/clerk-nextjs-onboa
 
 ## Connect with us
 
-You can discuss ideas, ask questions, and meet others from the community in our [Discord](https://clerk.com/discord).
+You can discuss ideas and meet others from the community in our [Discord](https://clerk.com/discord).
 
 You can also follow [@clerk on X](https://x.com/clerk) for updates.
