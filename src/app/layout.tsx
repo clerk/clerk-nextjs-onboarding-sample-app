@@ -78,13 +78,13 @@ export default function RootLayout({
               </a>
               <a
                 className="flex flex-col justify-center p-2 hover:underline"
-                href="https://twitter.com/ClerkDev"
+                href="https://x.com/clerk"
               >
                 <Twitter />
               </a>
               <a
                 className="flex flex-col justify-center p-2 hover:underline"
-                href="https://discord.com/invite/b5rXHjAg7A"
+                href="https://clerk.com/discord"
               >
                 <Discord />
               </a>
