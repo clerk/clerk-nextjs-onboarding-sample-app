@@ -60,7 +60,7 @@ To run the example locally, you need to:
    }
    ```
 
-   The middleware needs this claim to read `onboardingComplete` after the form updates the user's public metadata. If you add it after signing in, sign out and back in before testing the redirect.
+   The middleware needs this claim to read `onboardingComplete` after the form updates the user's public metadata. If you add it after signing in, sign out and back in before testing the redirect. Before you deploy, add the same claim to your **Production** instance, or users will stay on `/onboarding` after they submit the form.
 
 4. Set the required Clerk environment variables.
 5. Run `pnpm install` to install the dependencies.

@@ -52,7 +52,7 @@ export default function RootLayout({
               href="https://github.com/clerk/clerk-nextjs-onboarding-sample-app"
             >
               <span className="hidden sm:inline">
-                View the Github Repo for this Sample App
+                View the GitHub repo for this sample app
               </span>
             </a>
 
