@@ -52,9 +52,19 @@ To run the example locally, you need to:
 
 1. Sign up for a Clerk account at [https://clerk.com](https://dashboard.clerk.com/sign-up?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app).
 2. Go to the [Clerk dashboard](https://dashboard.clerk.com?utm_source=github&utm_medium=template_repos&utm_campaign=onboarding_sample_app) and create an application.
-3. Set the required Clerk environment variables
-4. `pnpm install` the required dependencies.
-5. `pnpm dev` to launch the development server.
+3. In the Clerk Dashboard, select your application's **Development** instance. Navigate to the **Sessions** page. Under **Customize session token**, add the following to the Claims editor and select **Save**. If you already have custom claims, keep them and add this property:
+
+   ```json
+   {
+     "metadata": "{{user.public_metadata}}"
+   }
+   ```
+
+   The middleware needs this claim to read `onboardingComplete` after the form updates the user's public metadata. If you add it after signing in, sign out and back in before testing the redirect.
+
+4. Set the required Clerk environment variables.
+5. Run `pnpm install` to install the dependencies.
+6. Run `pnpm dev` to launch the development server.
 
 > _Alternatively, to use npm instead of pnpm, first delete the `pnpm-lock.yaml` file and run `npm install` and `npm run dev`_
 

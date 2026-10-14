@@ -11,7 +11,7 @@ export const completeOnboarding = async (formData: FormData) => {
     }
 
     try {
-        await client.users.updateUser(userId, {
+        await client.users.updateUserMetadata(userId, {
             publicMetadata: {
                 onboardingComplete: true,
                 applicationName: formData.get("applicationName"),
