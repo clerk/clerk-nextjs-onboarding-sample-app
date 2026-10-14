@@ -1,8 +1,4 @@
-import {
-  ClerkProvider,
-  SignedIn,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider, Show, UserButton } from "@clerk/nextjs";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Image from "next/image";
@@ -25,9 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider signInFallbackRedirectUrl="/dashboard" signUpFallbackRedirectUrl="/dashboard" afterSignOutUrl="/" >
-        <body className={`${inter.className} min-h-screen flex flex-col`}>
-
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <ClerkProvider
+          signInFallbackRedirectUrl="/dashboard"
+          signUpFallbackRedirectUrl="/dashboard"
+          afterSignOutUrl="/"
+        >
           <header className="flex items-center h-20 gap-4 px-4 border-b border-black border-solid sm:px-8 border-opacity-20">
             <Link href="/" className="flex items-center h-20 gap-2 sm:gap-4">
               <Image
@@ -40,22 +39,21 @@ export default function RootLayout({
             </Link>
             <div className="grow" />
 
-            <SignedIn>
+            <Show when="signed-in">
               <UserButton />
-            </SignedIn>
+            </Show>
           </header>
 
-
-
           <main className="grow">{children}</main>
-
 
           <footer className="flex items-center h-20 gap-1 px-8 font-medium border-t md:px-20">
             <a
               className="flex gap-2 px-3 py-2 text-m font-semibold text-gray-600 transition duration-100 rounded-md hover:text-gray-800"
               href="https://github.com/clerk/clerk-nextjs-onboarding-sample-app"
             >
-              <span className="hidden sm:inline">View the Github Repo for this Sample App</span>
+              <span className="hidden sm:inline">
+                View the Github Repo for this Sample App
+              </span>
             </a>
 
             <nav className="flex justify-end grow sm:gap-2">
@@ -90,13 +88,11 @@ export default function RootLayout({
               </a>
             </nav>
           </footer>
-        </body>
-      </ClerkProvider>
-
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
-
 
 function Docs() {
   return (
@@ -185,5 +181,3 @@ function Discord() {
     </svg>
   );
 }
-
-
