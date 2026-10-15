@@ -1,4 +1,4 @@
-import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs"
+import { SignInButton, Show } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -12,21 +12,26 @@ export default function Home() {
             A simple sample app featuring an onboarding flow powered by Clerk.
           </p>
 
-          <SignedIn>
+          <Show when="signed-in">
             <div className="mt-8 inline-block">
-              <a href="/dashboard" className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+              <a
+                href="/dashboard"
+                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
+              >
                 Go to Dashboard
               </a>
             </div>
-          </SignedIn>
+          </Show>
 
-          <SignedOut>
+          <Show when="signed-out">
             <div className="mt-8 inline-block">
               <SignInButton>
-                <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Sign in</button>
+                <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+                  Sign in
+                </button>
               </SignInButton>
             </div>
-          </SignedOut>
+          </Show>
         </div>
       </article>
     </main>
