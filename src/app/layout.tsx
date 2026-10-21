@@ -40,7 +40,7 @@ export default function RootLayout({
             </Link>
             <div className="grow" />
 
-            <Suspense fallback={null}>
+            <Suspense>
               <Show when="signed-in">
                 <UserButton />
               </Show>

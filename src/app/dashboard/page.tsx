@@ -27,7 +27,7 @@ async function DashboardContent() {
 
 export default function Dashboard() {
   return (
-    <Suspense fallback={null}>
+    <Suspense>
       <DashboardContent />
     </Suspense>
   );

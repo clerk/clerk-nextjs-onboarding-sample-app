@@ -13,7 +13,7 @@ export default function Home() {
             A simple sample app featuring an onboarding flow powered by Clerk.
           </p>
 
-          <Suspense fallback={null}>
+          <Suspense>
             <Show when="signed-in">
               <div className="mt-8 inline-block">
                 <a
