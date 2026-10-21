@@ -1,8 +1,9 @@
 import { auth } from "@clerk/nextjs/server";
+import { Suspense } from "react";
 import { SessionDetails, UserDetails } from "./details";
 import { OnboardingDetails } from "./onboarding-details";
 
-export default async function Dashboard() {
+async function DashboardContent() {
   const { userId, sessionClaims } = await auth()
 
   return (
@@ -21,5 +22,13 @@ export default async function Dashboard() {
         </>
       )}
     </div>
+  );
+}
+
+export default function Dashboard() {
+  return (
+    <Suspense fallback={null}>
+      <DashboardContent />
+    </Suspense>
   );
 }

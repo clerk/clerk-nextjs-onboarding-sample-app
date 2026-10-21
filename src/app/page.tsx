@@ -1,4 +1,5 @@
 import { SignInButton, Show } from "@clerk/nextjs";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -12,26 +13,28 @@ export default function Home() {
             A simple sample app featuring an onboarding flow powered by Clerk.
           </p>
 
-          <Show when="signed-in">
-            <div className="mt-8 inline-block">
-              <a
-                href="/dashboard"
-                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
-              >
-                Go to Dashboard
-              </a>
-            </div>
-          </Show>
+          <Suspense fallback={null}>
+            <Show when="signed-in">
+              <div className="mt-8 inline-block">
+                <a
+                  href="/dashboard"
+                  className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
+                >
+                  Go to Dashboard
+                </a>
+              </div>
+            </Show>
 
-          <Show when="signed-out">
-            <div className="mt-8 inline-block">
-              <SignInButton>
-                <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
-                  Sign in
-                </button>
-              </SignInButton>
-            </div>
-          </Show>
+            <Show when="signed-out">
+              <div className="mt-8 inline-block">
+                <SignInButton>
+                  <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+                    Sign in
+                  </button>
+                </SignInButton>
+              </div>
+            </Show>
+          </Suspense>
         </div>
       </article>
     </main>
