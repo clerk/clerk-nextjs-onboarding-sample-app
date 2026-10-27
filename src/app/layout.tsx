@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,9 +40,11 @@ export default function RootLayout({
             </Link>
             <div className="grow" />
 
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+            <Suspense>
+              <Show when="signed-in">
+                <UserButton />
+              </Show>
+            </Suspense>
           </header>
 
           <main className="grow">{children}</main>
